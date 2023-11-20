@@ -1,0 +1,21 @@
+﻿body {
+}
+.Login_page {
+    border: 2px solid groove;
+    height: 30vh;
+    width: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: floralwhite;
+    box-shadow: 5px 5px 10px #888888; 
+    margin: auto; 
+    margin-top: 20vh; 
+    max-width: 400px;
+}
+@media (max-width: 768px) {
+    .Login_page {
+        max-width: 80%; 
+    }
+}
