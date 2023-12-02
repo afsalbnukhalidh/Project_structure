@@ -2,7 +2,6 @@
 using E_MAHAL_API.DTO;
 using E_MAHAL_API.Interfaces;
 using E_MAHAL_API.Models;
-using E_MAHAL_API.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_MAHAL_API.Repositories
@@ -39,13 +38,21 @@ namespace E_MAHAL_API.Repositories
             }
             return response;
         }
-        public async Task<List<MemberRequest>> GetTableValues(int PageNumber, int skip)
+        public MemberRequestList GetTableValues(int pageSize, int skip)
         {
-            var DbCheck = _dbContext.Members.ToList();
-            MemberRequest member = new MemberRequest() 
-            { 
-            };
-            return member;
+            MemberRequestList result = new MemberRequestList();
+            var list = _dbContext.Members
+                 .Select(member => new MemberRequest
+                 {
+                     Name= member.Name,
+                     Address = member.Address,
+                     HomeNumber = member.HomeNumber,
+                     Contact = member.Contact
+                 }).Skip(pageSize * (skip - 1)).Take(pageSize).ToList();
+            result.count =_dbContext.Members.Count();
+            result.members = list;
+            result.message = "success";
+            return result;
         }
     }
 }

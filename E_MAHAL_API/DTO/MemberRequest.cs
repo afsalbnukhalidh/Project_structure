@@ -1,4 +1,4 @@
-﻿namespace E_MAHAL_API.Requests
+﻿namespace E_MAHAL_API.DTO
 {
     public class MemberRequest
     {
