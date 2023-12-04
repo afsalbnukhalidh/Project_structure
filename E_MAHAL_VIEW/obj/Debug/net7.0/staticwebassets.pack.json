@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\LoginPage.css"
     },
     {
+      "Id": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\css\\datatable.css",
+      "PackagePath": "staticwebassets\\css\\datatable.css"
+    },
+    {
       "Id": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -243,6 +247,10 @@
     {
       "Id": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\lib\\jquery\\dist\\Jquery3.6.4.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\Jquery3.6.4.js"
+    },
+    {
+      "Id": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\lib\\jquery\\dist\\datatable.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\datatable.js"
     },
     {
       "Id": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\lib\\jquery\\dist\\jquery.js",

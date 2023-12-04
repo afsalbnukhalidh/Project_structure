@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6w0efasClsNG3HvOKSsDkhVdyXPdU4nsg/sp877Tuwc=",
+  "Hash": "kHjdQ9vAw/4d6SGC1vI+irGpnFTXFMN9alra8XRXCog=",
   "Source": "E_MAHAL_VIEW",
   "BasePath": "_content/E_MAHAL_VIEW",
   "Mode": "Default",
@@ -61,6 +61,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\E_MAHAL_VIEW.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\css\\datatable.css",
+      "SourceId": "E_MAHAL_VIEW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\",
+      "BasePath": "_content/E_MAHAL_VIEW",
+      "RelativePath": "css/datatable.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\datatable.css"
     },
     {
       "Identity": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\css\\LoginPage.css",
@@ -911,6 +928,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
+    },
+    {
+      "Identity": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\lib\\jquery\\dist\\datatable.js",
+      "SourceId": "E_MAHAL_VIEW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\",
+      "BasePath": "_content/E_MAHAL_VIEW",
+      "RelativePath": "lib/jquery/dist/datatable.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\datatable.js"
     },
     {
       "Identity": "D:\\ADO\\E_MAHAL_API\\E_MAHAL_VIEW\\wwwroot\\lib\\jquery\\dist\\jquery.js",
