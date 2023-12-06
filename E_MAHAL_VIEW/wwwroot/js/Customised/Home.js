@@ -22,69 +22,61 @@ $('#createStudentForm').submit(function (e) {
         }
     });
 });
-
 $(document).ready(function () {
-    debugger
-    updateDataTable(1);
+    BindDasboardTable(1);
 });
+let datTable;
+function BindDasboardTable(pnmbr) {
+    if ($.fn.DataTable.isDataTable('#EmahalTableSection')) {
+        datTable.clear().destroy();
+    }
 
-function updateDataTable(pageNumber) {
     debugger
-    // If pageNumber is not provided, default it to 1
-    if (pageNumber == 0) {
-        pageNumber == 1
-    }
-    else {
-        pageNumber = pageNumber
-    }
-
-    // Make Ajax call to get updated data
-    $.ajax({
-        url: aUrl + '/api/Home/GetTableValues',
-        type: 'POST',
-        data: { PageNumber: pageNumber },
-        dataType: 'json',
-        success: function (data) {
-            // Destroy existing DataTable
-            if ($.fn.DataTable.isDataTable('#EmahalTableSection')) {
-                localDataTable.clear().destroy();
-            }
-
-            // Reinitialize DataTable with updated data
-            localDataTable = $('#EmahalTableSection').DataTable({
-                // Your DataTable initialization options...
-                ajax: {
-                    url: aUrl + '/api/Home/GetTableValues',
-                    type: 'POST',
-                    data: { PageNumber: pageNumber },
-                    dataSrc: 'members',
-                    contentType: 'application/json',
-                    dataType: 'json',
-                },
-                columns: [
-                    { data: null, render: function (data, type, row, meta) { return meta.row + meta.settings._iDisplayStart + 1; } }, // SL.NO
-                    { data: 'Name' },
-                    { data: 'Address' },
-                    { data: 'HomeNumber' },
-                    { data: 'Contact' }
-                ],
-                paging: true,
-                searching: false,
-                info: false
-            });
-
-            // Clear and redraw the DataTable
-            localDataTable.clear().rows.add(data.members).draw();
+     datTable = $("#EmahalTableSection").DataTable({
+        "order": [[6, "desc"]],
+        "dom": "lifrtp",
+        "destroy": true,
+        "processing": true,
+        "serverSide": true,
+        "filter": true,
+        "searching": true,
+        "responsive": true,
+        "info": true,
+        "language": {
+            "searchPlaceholder": 'Search...',
+            "sSearch": '',
+            "lengthMenu": '_MENU_ '
         },
-        error: function () {
-            // Handle error
-        }
+
+       "ajax": {
+            url: aUrl + '/api/Home/GetTableValues',
+            type: 'POST',
+            data: function (d) {
+                d.PageNumber = d.start / d.length + 1;
+            },
+            dataSrc: 'members', // Use the filtered members
+            contentType: 'application/json',
+            dataType: 'json',
+        },
+        columns: [
+            { "data": null, "render": function (data, type, row, meta) { return meta.row + meta.settings._iDisplayStart + 1; } },
+            { "data": "name" },
+            { "data": "address" },
+            { "data": "homeNumber" },
+            { "data": "contact" },
+            {
+                // Define the Action column
+                data: null,
+                defaultContent: '<button class="btn btn-sm btn-master view-more-btn">View More</button>',
+                orderable: false,
+                searchable: false
+            }
+        ],
+        "columnDefs": [
+            { "searchable": true }
+        ]
     });
-}
 
-// Update button click event
-$('#updateButton').on('click', function () {
-    var pageNumber = localDataTable ? localDataTable.page.info().page + 1 : 1;
-    updateDataTable(pageNumber);
-});
 
+    return datTable;
+};
